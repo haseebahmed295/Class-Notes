@@ -1,0 +1,1 @@
+import{g as r,C as t}from"./index-CQJlBE6F.js";const c={__name:"LogOut",setup(n){const o=t();return r(async()=>{try{const e=localStorage.getItem("access_token")}catch(e){console.error("Error during logout:",e)}finally{localStorage.removeItem("access_token"),localStorage.removeItem("refresh_token"),o.push("/user/login")}}),(e,s)=>null}};export{c as default};
