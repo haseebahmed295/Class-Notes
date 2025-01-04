@@ -4,7 +4,7 @@ const backend_url = 'https://class-notes-backend-dage.onrender.com';
 
 async function getmenuitems() {
     try {
-        const response = await axios.get(backend_url + '/menuitems'); // Replace with your API URL
+        const response = await axios.get(backend_url + '/menu-items'); // Replace with your API URL
         return response.data;
     } catch (error) {
         console.error('Failed to fetch menu items');
