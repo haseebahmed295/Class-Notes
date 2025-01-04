@@ -17,7 +17,7 @@ const handleLogin = async () => {
     }
 
     try {
-        const response = await axios.post('http://127.0.0.1:8000/user/login', {
+        const response = await axios.post('https://class-notes-backend-dage.onrender.com/user/login', {
             username: username.value,
             password: password.value
         });
