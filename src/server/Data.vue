@@ -94,7 +94,7 @@ const checkLoginStatus = async () => {
     }
 
     try {
-        const response = await axios.post(backend_url + '/user/validate', { token });
+        const response = await axios.post(backend_url + '/user/auth', { token });
         if (!response.data.isValid) {
             if (response.data.error) {
                 localStorage.removeItem('access_token');
