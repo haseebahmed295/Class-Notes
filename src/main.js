@@ -1,7 +1,6 @@
 import '@/assets/styles.scss';
 import '@/assets/tailwind.css';
 import Aura from '@primevue/themes/aura';
-import 'flowbite';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';

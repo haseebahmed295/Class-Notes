@@ -2,7 +2,7 @@
 module.exports = {
     darkMode: ['selector', '[class*="app-dark"]'],
     content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-    plugins: [require('tailwindcss-primeui'), require('flowbite/plugin'), require('flowbite-typography')],
+    plugins: [require('tailwindcss-primeui')],
     theme: {
         screens: {
             sm: '576px',
