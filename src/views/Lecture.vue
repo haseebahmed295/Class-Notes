@@ -95,7 +95,7 @@ onMounted(async () => {
                         }"
                     />
                 </div>
-                <Editor v-model:model-value="content" class="format lg:format-lg dark:format-invert max-w-full" />
+                <Editor v-model:model-value="content" />
             </div>
 
             <!-- Button to add a new card -->
