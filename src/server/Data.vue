@@ -1,9 +1,10 @@
 <script>
 import axios from 'axios';
+const backend_url = 'https://class-notes-backend-dage.onrender.com';
 
 async function getmenuitems() {
     try {
-        const response = await axios.get('http://127.0.0.1:8000/menu-items'); // Replace with your API URL
+        const response = await axios.get(backend_url + '/menuitems'); // Replace with your API URL
         return response.data;
     } catch (error) {
         console.error('Failed to fetch menu items');
@@ -29,7 +30,7 @@ async function getSubjectlist() {
 
 async function addLecture(label, subject) {
     try {
-        const response = await axios.post('http://127.0.0.1:8000/lectures/add', {
+        const response = await axios.post(backend_url + '/lectures/add', {
             label: label.value,
             subject: subject.value.code
         });
@@ -40,7 +41,7 @@ async function addLecture(label, subject) {
 }
 async function addSubject(Label) {
     try {
-        const response = await axios.post('http://127.0.0.1:8000/subjects/add', {
+        const response = await axios.post(backend_url + '/subjects/add', {
             label: Label.value
         });
         return response.data;
@@ -51,7 +52,7 @@ async function addSubject(Label) {
 
 async function addLectureData(subject, lecture, page, data) {
     try {
-        const response = await axios.post('http://127.0.0.1:8000/lectures/data/add', {
+        const response = await axios.post(backend_url + '/lectures/data/add', {
             subject: subject,
             lecture: lecture,
             page: page,
@@ -64,7 +65,7 @@ async function addLectureData(subject, lecture, page, data) {
 }
 async function getLectureData(subject, lecture) {
     try {
-        const response = await axios.post('http://127.0.0.1:8000/lectures/data/get', {
+        const response = await axios.post(backend_url + '/lectures/data/get', {
             subject,
             lecture
         });
@@ -93,7 +94,7 @@ const checkLoginStatus = async () => {
     }
 
     try {
-        const response = await axios.post('http://127.0.0.1:8000/user/auth', { token });
+        const response = await axios.post(backend_url + '/user/validate', { token });
         if (!response.data.isValid) {
             if (response.data.error) {
                 localStorage.removeItem('access_token');
